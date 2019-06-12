@@ -80,13 +80,13 @@ public class Semaforo extends JPanel implements Runnable {
             try {
                 switch (luz){
                     case 1 :
-                        Thread.sleep(6000);
+                        Thread.sleep(2000);
                         break;
                     case 2 :
-                        Thread.sleep(9000);
+                        Thread.sleep(2000);
                         break;
                     case 3 :
-                        Thread.sleep(3000);
+                        Thread.sleep(2000);
                         break;
 
 

@@ -6,32 +6,28 @@ import br.exercicio.semaforo.base.Simulador;
 import java.util.ArrayList;
 import java.util.List;
 
+
 /**
  *
  * Apenas um semaforo
  *
  */
-public class Cenario1 implements Runnable {
+public class Cenario1 {
 
-	
-	public Cenario1() {
 
-	}
+    Semaforo semaforo = new Semaforo(1);
 
-	@Override
-	public void run() {
-		System.out.println("não fuinciono");
-		Semaforo semaforo = new Semaforo(1);
-		List<Semaforo> semaforos = new ArrayList<Semaforo>();
-		semaforos.add(semaforo);
-		new Simulador(semaforos, 300, 150);
-		
-	}
 
-	public static void main(String[] args) {
-		Cenario1 c1 = new Cenario1();
-		Thread t1 = new Thread(c1);
-		t1.start();
-	}
+    public Cenario1() {
+        List<Semaforo> semaforos = new ArrayList<Semaforo>();
+        semaforos.add(semaforo);
+        Simulador simulador = new Simulador(semaforos,300,150);
+        new Thread(semaforo).start();
+    }
+
+    public static void main(String[] args) {
+        new Cenario1();
+    }
+
 
 }
