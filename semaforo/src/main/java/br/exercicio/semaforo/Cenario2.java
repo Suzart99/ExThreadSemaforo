@@ -36,29 +36,23 @@ public class Cenario2 implements Runnable {
 
 	@Override
 	public void run() {
-		
+
 		System.out.println(threadSema1.getName());
 		System.out.println(threadSema2.getName());
 		threadSema1.start();
 		threadSema2.start();
 
-		if(semaforo1.luz == 2 ){
+		if (semaforo1.luz == 2) {
 			System.out.println("entrei");
 			semaforo2.luz = 3;
 			
 			try {
-				threadSema1.sleep(4000);
+				threadSema2.sleep(2000);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		}else if(semaforo2.luz == 3 ){
-			System.out.println("entrei no elseif");
-			semaforo1.luz = 3;
-			threadSema1.notify();
-			
-			
-	
-	}
+
 		}
+	}
 }
